@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
+
+<body>
+	{{- partial "header.html" . -}}
+	<div id="content">
+		{{- block "main" . }}{{- end }}
+	</div>
+	{{- partial "footer.html" . -}}
+
+	<script>
+		const e = 1618033989;
+		const s = document.getElementById("s");
+		fn = function () {
+		  let n = Date.now() / 1000;
+		  let d = Math.round(n - e);
+		  s.innerText = d;
+		};
+		fn();
+		setInterval(fn, 1000);
+	  </script>
+</body>
+
+</html>
